@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.1
+* iBrand Dashboard MUI - v3.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -23,13 +23,13 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Icon from "@mui/material/Icon";
 
-// Argon Dashboard 2 MUI components
+// iBrand Dashboard MUI components
 import ArgonBox from "components/ArgonBox";
 
 // Custom styles for the sidenavItem
 import { item, itemIcon, itemText, itemIconBox } from "examples/Sidenav/styles/sidenavItem";
 
-// Argon Dashboard 2 MUI context
+// iBrand Dashboard MUI context
 import { useArgonController } from "context";
 
 function SidenavItem({ icon, name, active, open, ...rest }) {

@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.1
+* iBrand Dashboard MUI - v3.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -16,12 +16,12 @@ Coded by www.creative-tim.com
 // @mui material components
 import Link from "@mui/material/Link";
 
-// Argon Dashboard 2 MUI components
+// iBrand Dashboard MUI components
 import ArgonButton from "components/ArgonButton";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
-// Argon Dashboard 2 MUI context
+// iBrand Dashboard MUI context
 import { useArgonController } from "context";
 
 // Images

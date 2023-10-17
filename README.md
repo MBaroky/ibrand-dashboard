@@ -1,4 +1,4 @@
-# [Argon Dashboard 2 MUI](http://demos.creative-tim.com/argon-dashboard-material-ui/?ref=readme-admui) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://www.creative-tim.com/product/argon-dashboard-material-ui&text=Check%20Argon%20Dashboard%20React%20made%20by%20@CreativeTim%20#webdesign%20#dashboard%20#argondesign%20#react%20https://www.creative-tim.com/product/argon-dashboard-material-ui)
+# [iBrand Dashboard MUI](http://demos.creative-tim.com/argon-dashboard-material-ui/?ref=readme-admui) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://www.creative-tim.com/product/argon-dashboard-material-ui&text=Check%20Argon%20Dashboard%20React%20made%20by%20@CreativeTim%20#webdesign%20#dashboard%20#argondesign%20#react%20https://www.creative-tim.com/product/argon-dashboard-material-ui)
 
 ![version](https://img.shields.io/badge/version-3.0.1-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/argon-dashboard-material-ui.svg)](https://github.com/creativetimofficial/argon-dashboard-material-ui/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/argon-dashboard-material-ui.svg)](https://github.com/creativetimofficial/argon-dashboard-material-ui/issues?q=is%3Aissue+is%3Aclosed)
 
@@ -8,7 +8,7 @@ Start your Development with an Innovative Admin Template for MUI and React. If y
 
 **Fully Coded Elements**
 
-Argon Dashboard 2 MUI is built with over 70 frontend individual elements, like buttons, inputs, navbars, nav tabs, cards, or alerts, giving you the freedom of choosing and combining. All components can take variations in color, which you can easily modify using MUI styled api and sx prop. You will save a lot of time going from prototyping to full-functional code because all elements are implemented. This Free MUI Dashboard is coming with prebuilt design blocks, so the development process is seamless, switching from our pages to the real website is very easy to be done.
+iBrand Dashboard MUI is built with over 70 frontend individual elements, like buttons, inputs, navbars, nav tabs, cards, or alerts, giving you the freedom of choosing and combining. All components can take variations in color, which you can easily modify using MUI styled api and sx prop. You will save a lot of time going from prototyping to full-functional code because all elements are implemented. This Free MUI Dashboard is coming with prebuilt design blocks, so the development process is seamless, switching from our pages to the real website is very easy to be done.
 
 View [all components here](https://www.creative-tim.com/learning-lab/material-ui/alerts/argon-dashboard/).
 
@@ -20,7 +20,7 @@ You can read more about the [documentation here](https://www.creative-tim.com/le
 
 **Example Pages**
 
-If you want to get inspiration or just show something directly to your clients, you can jump-start your development with our pre-built example pages. Every page is spaced well, with attractive layouts and pleasing shapes. Argon Dashboard 2 MUI has everything you need to quickly set up an amazing project.
+If you want to get inspiration or just show something directly to your clients, you can jump-start your development with our pre-built example pages. Every page is spaced well, with attractive layouts and pleasing shapes. iBrand Dashboard MUI has everything you need to quickly set up an amazing project.
 
 View [example pages here](https://demos.creative-tim.com/argon-dashboard-material-ui/).
 
@@ -62,7 +62,7 @@ Let us know your thoughts below. And good luck with development!
 | React |
 | ----- |
 
-| [![Argon Dashboard 2 MUI](https://s3.amazonaws.com/creativetim_bucket/products/447/thumb/argon-dashboard-material-ui.jpg)](http://demos.creative-tim.com/argon-dashboard-material-ui/?ref=readme-admui)
+| [![iBrand Dashboard MUI](https://s3.amazonaws.com/creativetim_bucket/products/447/thumb/argon-dashboard-material-ui.jpg)](http://demos.creative-tim.com/argon-dashboard-material-ui/?ref=readme-admui)
 
 ## Demo
 
@@ -87,7 +87,7 @@ Quick start options:
 
 ## Documentation
 
-The documentation for the Argon Dashboard 2 MUI is hosted at our [website](https://www.creative-tim.com/learning-lab/material-ui/overview/argon-dashboard/?ref=readme-admui).
+The documentation for the iBrand Dashboard MUI is hosted at our [website](https://www.creative-tim.com/learning-lab/material-ui/overview/argon-dashboard/?ref=readme-admui).
 
 ### What's included
 
@@ -182,9 +182,9 @@ At present, we officially aim to support the last two versions of the following 
 
 ## Reporting Issues
 
-We use GitHub Issues as the official bug tracker for the Argon Dashboard 2 MUI. Here are some advices for our users that want to report an issue:
+We use GitHub Issues as the official bug tracker for the iBrand Dashboard MUI. Here are some advices for our users that want to report an issue:
 
-1. Make sure that you are using the latest version of the Argon Dashboard 2 MUI. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/product/argon-dashboard-material-ui?ref=readme-admui).
+1. Make sure that you are using the latest version of the iBrand Dashboard MUI. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/product/argon-dashboard-material-ui?ref=readme-admui).
 2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
 3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
 

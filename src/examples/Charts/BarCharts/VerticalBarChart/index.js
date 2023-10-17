@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.1
+* iBrand Dashboard MUI - v3.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -24,14 +24,14 @@ import { Bar } from "react-chartjs-2";
 // @mui material components
 import Card from "@mui/material/Card";
 
-// Argon Dashboard 2 MUI components
+// iBrand Dashboard MUI components
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
 // VerticalBarChart configurations
 import configs from "examples/Charts/BarCharts/VerticalBarChart/configs";
 
-// Argon Dashboard 2 MUI base styles
+// iBrand Dashboard MUI base styles
 import colors from "assets/theme/base/colors";
 
 function VerticalBarChart({ title, description, height, chart }) {

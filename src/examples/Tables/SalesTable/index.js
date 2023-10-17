@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.1
+* iBrand Dashboard MUI - v3.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -25,11 +25,11 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
-// Argon Dashboard 2 MUI components
+// iBrand Dashboard MUI components
 import ArgonTypography from "components/ArgonTypography";
 import ArgonBox from "components/ArgonBox";
 
-// Argon Dashboard 2 MUI example components
+// iBrand Dashboard MUI example components
 import SalesTableCell from "examples/Tables/SalesTable/SalesTableCell";
 
 function SalesTable({ title, rows }) {

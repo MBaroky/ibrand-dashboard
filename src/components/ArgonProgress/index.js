@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.1
+* iBrand Dashboard MUI - v3.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -18,7 +18,7 @@ import { forwardRef } from "react";
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
-// Argon Dashboard 2 MUI components
+// iBrand Dashboard MUI components
 import ArgonTypography from "components/ArgonTypography";
 
 // Custom styles for ArgonProgress

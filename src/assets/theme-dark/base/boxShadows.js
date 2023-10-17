@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.1
+* iBrand Dashboard MUI - v3.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -14,15 +14,15 @@ Coded by www.creative-tim.com
 */
 
 /**
- * The base box-shadow styles for the Argon Dashboard 2 MUI.
+ * The base box-shadow styles for the iBrand Dashboard MUI.
  * You can add new box-shadow using this file.
- * You can customized the box-shadow for the entire Argon Dashboard 2 MUI using thie file.
+ * You can customized the box-shadow for the entire iBrand Dashboard MUI using thie file.
  */
 
-// Argon Dashboard 2 MUI Base Styles
+// iBrand Dashboard MUI Base Styles
 import colors from "assets/theme-dark/base/colors";
 
-// Argon Dashboard 2 MUI Helper Functions
+// iBrand Dashboard MUI Helper Functions
 import boxShadow from "assets/theme-dark/functions/boxShadow";
 
 const { black, white, info, tabs, dark, text } = colors;

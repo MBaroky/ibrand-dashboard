@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.1
+* iBrand Dashboard MUI - v3.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -26,14 +26,14 @@ import Collapse from "@mui/material/Collapse";
 import MuiLink from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
 
-// Argon Dashboard 2 MUI components
+// iBrand Dashboard MUI components
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
-// Argon Dashboard 2 MUI exampless
+// iBrand Dashboard MUI exampless
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 
-// Argon Dashboard 2 PRO React contexts
+// iBrand Dashboard PRO React contexts
 import { useArgonController } from "context";
 
 function DefaultNavbarMobile({ routes, open }) {

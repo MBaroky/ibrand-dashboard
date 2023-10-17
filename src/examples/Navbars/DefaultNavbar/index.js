@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.1
+* iBrand Dashboard MUI - v3.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -26,16 +26,16 @@ import { Link } from "react-router-dom";
 import Icon from "@mui/material/Icon";
 import Container from "@mui/material/Container";
 
-// Argon Dashboard 2 MUI components
+// iBrand Dashboard MUI components
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import ArgonButton from "components/ArgonButton";
 
-// Argon Dashboard 2 MUI examples components
+// iBrand Dashboard MUI examples components
 import DefaultNavbarLink from "examples/Navbars/DefaultNavbar/DefaultNavbarLink";
 import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMobile";
 
-// Argon Dashboard 2 MUI Base Styles
+// iBrand Dashboard MUI Base Styles
 import breakpoints from "assets/theme/base/breakpoints";
 
 // Material Dashboard 2 PRO React context
@@ -62,8 +62,8 @@ function DefaultNavbar({ brand, transparent, light, action }) {
       }
     }
 
-    /** 
-     The event listener that's calling the displayMobileNavbar function when 
+    /**
+     The event listener that's calling the displayMobileNavbar function when
      resizing the window.
     */
     window.addEventListener("resize", displayMobileNavbar);
@@ -176,7 +176,7 @@ function DefaultNavbar({ brand, transparent, light, action }) {
 
 // Declaring default props for DefaultNavbar
 DefaultNavbar.defaultProps = {
-  brand: "Argon Dashboard 2",
+  brand: "iBrand Dashboard",
   transparent: false,
   light: false,
   action: false,

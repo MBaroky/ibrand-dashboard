@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.1
+* iBrand Dashboard MUI - v3.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -21,7 +21,7 @@ import PropTypes from "prop-types";
 // Custom styles for ArgonTypography
 import ArgonTypographyRoot from "components/ArgonTypography/ArgonTypographyRoot";
 
-// Argon Dashboard 2 MUI context
+// iBrand Dashboard MUI context
 import { useArgonController } from "context";
 
 const ArgonTypography = forwardRef(

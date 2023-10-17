@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.1
+* iBrand Dashboard MUI - v3.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -22,15 +22,15 @@ import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
-// Argon Dashboard 2 MUI components
+// iBrand Dashboard MUI components
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import ArgonAvatar from "components/ArgonAvatar";
 
-// Argon Dashboard 2 MUI example components
+// iBrand Dashboard MUI example components
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
-// Argon Dashboard 2 MUI base styles
+// iBrand Dashboard MUI base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
 // Images
@@ -48,7 +48,7 @@ function Header() {
         : setTabsOrientation("horizontal");
     }
 
-    /** 
+    /**
      The event listener that's calling the handleTabsOrientation function when resizing the window.
     */
     window.addEventListener("resize", handleTabsOrientation);

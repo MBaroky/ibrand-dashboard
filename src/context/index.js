@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.1
+* iBrand Dashboard MUI - v3.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -23,13 +23,13 @@ import { createContext, useContext, useReducer, useMemo } from "react";
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
-// The Argon Dashboard 2 MUI main context
+// The iBrand Dashboard MUI main context
 const Argon = createContext(null);
 
 // Setting custom name for the context which is visible on react dev tools
 Argon.displayName = "ArgonContext";
 
-// Argon Dashboard 2 MUI reducer
+// iBrand Dashboard MUI reducer
 function reducer(state, action) {
   switch (action.type) {
     case "MINI_SIDENAV": {
@@ -65,7 +65,7 @@ function reducer(state, action) {
   }
 }
 
-// Argon Dashboard 2 MUI context provider
+// iBrand Dashboard MUI context provider
 function ArgonControllerProvider({ children }) {
   const initialState = {
     miniSidenav: false,
@@ -86,7 +86,7 @@ function ArgonControllerProvider({ children }) {
   return <Argon.Provider value={value}>{children}</Argon.Provider>;
 }
 
-// Argon Dashboard 2 MUI custom hook for using context
+// iBrand Dashboard MUI custom hook for using context
 function useArgonController() {
   const context = useContext(Argon);
 

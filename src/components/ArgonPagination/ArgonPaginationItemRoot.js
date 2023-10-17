@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.1
+* iBrand Dashboard MUI - v3.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 // @mui material components
 import { styled } from "@mui/material/styles";
 
-// Argon Dashboard 2 MUI components
+// iBrand Dashboard MUI components
 import ArgonButton from "components/ArgonButton";
 
 export default styled(ArgonButton)(({ theme, ownerState }) => {

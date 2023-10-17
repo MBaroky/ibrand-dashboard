@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.1
+* iBrand Dashboard MUI - v3.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -14,9 +14,9 @@ Coded by www.creative-tim.com
 */
 
 /**
- * The base colors for the Argon Dashboard 2 MUI.
+ * The base colors for the iBrand Dashboard MUI.
  * You can add new color using this file.
- * You can customized the colors for the entire Argon Dashboard 2 MUI using thie file.
+ * You can customized the colors for the entire iBrand Dashboard MUI using thie file.
  */
 
 const colors = {

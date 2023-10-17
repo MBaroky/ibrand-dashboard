@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Argon Dashboard 2 MUI - v3.0.1
+* iBrand Dashboard MUI - v3.0.1
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard-material-ui
@@ -14,7 +14,7 @@ Coded by www.creative-tim.com
 */
 
 /**
-  The pxToRem() function helps you to convert a px unit into a rem unit, 
+  The pxToRem() function helps you to convert a px unit into a rem unit,
  */
 
 function pxToRem(number, baseNumber = 16) {
