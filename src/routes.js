@@ -37,6 +37,7 @@ Coded by www.creative-tim.com
 import Dashboard from "layouts/dashboard";
 import Tables from "layouts/tables";
 import Billing from "layouts/billing";
+import FrontPage from "layouts/frontpage";
 import VirtualReality from "layouts/virtual-reality";
 import RTL from "layouts/rtl";
 import Profile from "layouts/profile";
@@ -54,6 +55,14 @@ const routes = [
     route: "/dashboard",
     icon: <ArgonBox component="i" color="primary" fontSize="14px" className="ni ni-tv-2" />,
     component: <Dashboard />,
+  },
+  {
+    type: "route",
+    name: "Layout",
+    key: "layout",
+    route: "/layout",
+    icon: <ArgonBox component="i" color="info" fontSize="14px" className="ni ni-image" />,
+    component: <FrontPage />,
   },
   {
     type: "route",
