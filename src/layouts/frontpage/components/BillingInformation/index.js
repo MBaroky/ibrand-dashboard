@@ -14,7 +14,6 @@ Coded by www.creative-tim.com
 */
 
 import { useState, useEffect } from "react";
-import axios from "axios";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -27,30 +26,19 @@ import ArgonTypography from "components/ArgonTypography";
 import Slide from "layouts/frontpage/components/Slide";
 
 function BillingInformation() {
-  const [data, setData] = useState([]);
+  const [slides, setSlides] = useState([]);
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://ibrand.techno-era.co/en/api/offer/slider/?format=json", {
-      mode: "no-cors",
-      headers: {
-        method: "GET",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        throw res;
-      })
+    fetch("https://jsonplaceholder.typicode.com/albums/2/photos")
+      .then((response) => response.json())
       .then((data) => {
-        setData(data);
-        console.log(data);
+        setSlides(data);
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch((error) => console.error(error));
   }, []);
+
+  console.log(slides);
   return (
     <Card id="delete-account">
       <ArgonBox pt={3} px={2}>
@@ -60,21 +48,23 @@ function BillingInformation() {
       </ArgonBox>
       <ArgonBox pt={1} pb={2} px={2}>
         <ArgonBox component="ul" display="flex" flexDirection="column" p={0} m={0}>
-          {/* {data ? data.data.map((slide) => {}) : "loading"} */}
-          <Slide name="Slide 1" active="yes" notes="oliver@burrito.com" url="FRB1235476" />
-          <Slide
-            name="lucas harper"
-            active="stone tech zone"
-            notes="lucas@stone-tech.com"
-            url="FRB1235476"
-          />
-          <Slide
-            name="ethan james"
-            active="fiber notion"
-            notes="ethan@fiber.com"
-            url="FRB1235476"
-            noGutter
-          />
+          {slides
+            ? slides.map((slide, i) => {
+                const { id, title, url, thumbnailUrl } = slide;
+                if (i < 4) {
+                  return (
+                    <Slide
+                      key={i}
+                      name={`Slide-${id}`}
+                      active="yes"
+                      notes={title}
+                      url={url}
+                      thumb={thumbnailUrl}
+                    />
+                  );
+                }
+              })
+            : "loading"}
         </ArgonBox>
       </ArgonBox>
     </Card>

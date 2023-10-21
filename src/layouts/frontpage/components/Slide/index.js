@@ -27,7 +27,7 @@ import ArgonButton from "components/ArgonButton";
 // iBrand Dashboard MUI contexts
 import { useArgonController } from "context";
 
-function Slide({ name, active, notes, url, noGutter }) {
+function Slide({ name, active, notes, url, thumb, noGutter }) {
   const [controller] = useArgonController();
   const { darkMode } = controller;
 
@@ -46,6 +46,15 @@ function Slide({ name, active, notes, url, noGutter }) {
       })}
     >
       <ArgonBox width="100%" display="flex" flexDirection="column">
+        {/* <img src={thumb} alt="" /> */}
+        <div
+          style={{
+            backgroundImage: `url(${thumb})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            height: "100px",
+          }}
+        ></div>
         <ArgonBox
           display="flex"
           justifyContent="space-between"
@@ -111,6 +120,7 @@ Slide.propTypes = {
   active: PropTypes.string.isRequired,
   notes: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
+  thumb: PropTypes.string.isRequired,
   noGutter: PropTypes.bool,
 };
 
