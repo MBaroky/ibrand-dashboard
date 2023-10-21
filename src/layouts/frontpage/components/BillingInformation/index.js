@@ -13,6 +13,9 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 // @mui material components
 import Card from "@mui/material/Card";
 
@@ -20,36 +23,56 @@ import Card from "@mui/material/Card";
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 
-// Billing page components
-import Bill from "layouts/billing/components/Bill";
+// Slideing page components
+import Slide from "layouts/frontpage/components/Slide";
 
 function BillingInformation() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://ibrand.techno-era.co/en/api/offer/slider/?format=json", {
+      mode: "no-cors",
+      headers: {
+        method: "GET",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw res;
+      })
+      .then((data) => {
+        setData(data);
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <Card id="delete-account">
       <ArgonBox pt={3} px={2}>
         <ArgonTypography variant="h6" fontWeight="medium">
-          Billing Information
+          Slides
         </ArgonTypography>
       </ArgonBox>
       <ArgonBox pt={1} pb={2} px={2}>
         <ArgonBox component="ul" display="flex" flexDirection="column" p={0} m={0}>
-          <Bill
-            name="oliver liam"
-            company="viking burrito"
-            email="oliver@burrito.com"
-            vat="FRB1235476"
-          />
-          <Bill
+          {/* {data ? data.data.map((slide) => {}) : "loading"} */}
+          <Slide name="Slide 1" active="yes" notes="oliver@burrito.com" url="FRB1235476" />
+          <Slide
             name="lucas harper"
-            company="stone tech zone"
-            email="lucas@stone-tech.com"
-            vat="FRB1235476"
+            active="stone tech zone"
+            notes="lucas@stone-tech.com"
+            url="FRB1235476"
           />
-          <Bill
+          <Slide
             name="ethan james"
-            company="fiber notion"
-            email="ethan@fiber.com"
-            vat="FRB1235476"
+            active="fiber notion"
+            notes="ethan@fiber.com"
+            url="FRB1235476"
             noGutter
           />
         </ArgonBox>

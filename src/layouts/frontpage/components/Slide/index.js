@@ -27,7 +27,7 @@ import ArgonButton from "components/ArgonButton";
 // iBrand Dashboard MUI contexts
 import { useArgonController } from "context";
 
-function Bill({ name, company, email, vat, noGutter }) {
+function Slide({ name, active, notes, url, noGutter }) {
   const [controller] = useArgonController();
   const { darkMode } = controller;
 
@@ -75,24 +75,24 @@ function Bill({ name, company, email, vat, noGutter }) {
         </ArgonBox>
         <ArgonBox mb={1} lineHeight={0}>
           <ArgonTypography variant="caption" color="text">
-            Company Name:&nbsp;&nbsp;&nbsp;
+            Active?:&nbsp;&nbsp;&nbsp;
             <ArgonTypography variant="caption" fontWeight="medium" textTransform="capitalize">
-              {company}
+              {active}
             </ArgonTypography>
           </ArgonTypography>
         </ArgonBox>
         <ArgonBox mb={1} lineHeight={0}>
           <ArgonTypography variant="caption" color="text">
-            Email Address:&nbsp;&nbsp;&nbsp;
+            notes:&nbsp;&nbsp;&nbsp;
             <ArgonTypography variant="caption" fontWeight="medium">
-              {email}
+              {notes}
             </ArgonTypography>
           </ArgonTypography>
         </ArgonBox>
         <ArgonTypography variant="caption" color="text">
-          VAT Number:&nbsp;&nbsp;&nbsp;
+          url:&nbsp;&nbsp;&nbsp;
           <ArgonTypography variant="caption" fontWeight="medium">
-            {vat}
+            {url}
           </ArgonTypography>
         </ArgonTypography>
       </ArgonBox>
@@ -100,18 +100,18 @@ function Bill({ name, company, email, vat, noGutter }) {
   );
 }
 
-// Setting default values for the props of Bill
-Bill.defaultProps = {
+// Setting default values for the props of Slide
+Slide.defaultProps = {
   noGutter: false,
 };
 
-// Typechecking props for the Bill
-Bill.propTypes = {
+// Typechecking props for the Slide
+Slide.propTypes = {
   name: PropTypes.string.isRequired,
-  company: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  vat: PropTypes.string.isRequired,
+  active: PropTypes.string.isRequired,
+  notes: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   noGutter: PropTypes.bool,
 };
 
-export default Bill;
+export default Slide;
