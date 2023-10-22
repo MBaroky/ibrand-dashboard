@@ -17,34 +17,79 @@ import { useState, useEffect } from "react";
 
 // @mui material components
 import Card from "@mui/material/Card";
+import Modal from "@mui/material/Modal";
 
 // iBrand Dashboard MUI components
 import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
+import ArgonButton from "components/ArgonButton";
 
 // Slideing page components
 import Slide from "layouts/frontpage/components/Slide";
 
-function BillingInformation() {
-  const [slides, setSlides] = useState([]);
-  // const [loading, setLoading] = useState(true);
+// context
+import { useArgonController } from "context";
 
+// modal styles
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
+
+function BillingInformation() {
+  // slides list state
+  const [slides, setSlides] = useState([]);
+
+  // context controller
+  const [controller, dispatch] = useArgonController();
+
+  // new slide modal state
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  // updating slides via context
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/albums/2/photos")
-      .then((response) => response.json())
-      .then((data) => {
-        setSlides(data);
-      })
-      .catch((error) => console.error(error));
+    setSlides(controller.data);
   }, []);
 
-  console.log(slides);
   return (
     <Card id="delete-account">
       <ArgonBox pt={3} px={2}>
-        <ArgonTypography variant="h6" fontWeight="medium">
-          Slides
-        </ArgonTypography>
+        <ArgonBox
+          display="flex"
+          alignItems="space-between"
+          justifyContent="space-between"
+          mt={{ xs: 2, sm: 0 }}
+          ml={{ xs: -1.5, sm: 0 }}
+        >
+          <ArgonTypography variant="h6" fontWeight="medium">
+            Slides
+          </ArgonTypography>
+          <ArgonButton onClick={handleOpen}>Add Slide</ArgonButton>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <ArgonBox sx={style}>
+              <ArgonTypography id="modal-modal-title" variant="h6" component="h2">
+                Text in a modal
+              </ArgonTypography>
+              <ArgonTypography id="modal-modal-description" sx={{ mt: 2 }}>
+                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+              </ArgonTypography>
+            </ArgonBox>
+          </Modal>
+        </ArgonBox>
       </ArgonBox>
       <ArgonBox pt={1} pb={2} px={2}>
         <ArgonBox component="ul" display="flex" flexDirection="column" p={0} m={0}>

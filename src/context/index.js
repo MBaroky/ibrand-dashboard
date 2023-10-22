@@ -18,13 +18,18 @@ Coded by www.creative-tim.com
   you can customize the states for the different components here.
 */
 
-import { createContext, useContext, useReducer, useMemo } from "react";
+import { createContext, useContext, useReducer, useMemo, useEffect } from "react";
 
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
 // The iBrand Dashboard MUI main context
 const Argon = createContext(null);
+
+// define some action types as constants
+const FETCH_DATA = "FETCH_DATA";
+const FETCH_SUCCESS = "FETCH_SUCCESS";
+const FETCH_ERROR = "FETCH_ERROR";
 
 // Setting custom name for the context which is visible on react dev tools
 Argon.displayName = "ArgonContext";
@@ -59,6 +64,24 @@ function reducer(state, action) {
     case "DARK_MODE": {
       return { ...state, darkMode: action.value };
     }
+    case FETCH_DATA:
+      return {
+        ...state,
+        loading: true,
+        error: null,
+      };
+    case FETCH_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        data: action.payload,
+      };
+    case FETCH_ERROR:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
     }
@@ -77,11 +100,30 @@ function ArgonControllerProvider({ children }) {
     direction: "ltr",
     layout: "dashboard",
     darkMode: false,
+    loading: false,
+    error: null,
+    data: [],
   };
 
   const [controller, dispatch] = useReducer(reducer, initialState);
 
   const value = useMemo(() => [controller, dispatch], [controller, dispatch]);
+
+  useEffect(() => {
+    // dispatch an action before fetching
+    dispatch({ type: FETCH_DATA });
+    // use axios or fetch to get the data
+    fetch("https://jsonplaceholder.typicode.com/albums/2/photos")
+      .then((response) => response.json())
+      .then((data) => {
+        // dispatch an action after fetching successfully
+        dispatch({ type: FETCH_SUCCESS, payload: data });
+      })
+      .catch((error) => {
+        // dispatch an action in case of an error
+        dispatch({ type: FETCH_ERROR, payload: error.message });
+      });
+  }, []);
 
   return <Argon.Provider value={value}>{children}</Argon.Provider>;
 }
@@ -112,6 +154,8 @@ const setOpenConfigurator = (dispatch, value) => dispatch({ type: "OPEN_CONFIGUR
 const setDirection = (dispatch, value) => dispatch({ type: "DIRECTION", value });
 const setLayout = (dispatch, value) => dispatch({ type: "LAYOUT", value });
 const setDarkMode = (dispatch, value) => dispatch({ type: "DARK_MODE", value });
+
+// create and export a getter function that returns the name of the character
 
 export {
   ArgonControllerProvider,
