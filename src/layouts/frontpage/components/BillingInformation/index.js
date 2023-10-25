@@ -57,12 +57,14 @@ function BillingInformation() {
 
   // updating slides via context
   useEffect(() => {
-    // use axios or fetch to get the data
     fetch("https://jsonplaceholder.typicode.com/albums/2/photos")
       .then((response) => response.json())
       .then((data) => getSlides(dispatch, data))
       .catch((error) => console.log(error.message));
+  }, [controller.slides]);
 
+  // updating slides status via context
+  useEffect(() => {
     setSlides(controller.slides);
   }, [controller.slides]);
 
@@ -88,7 +90,7 @@ function BillingInformation() {
           >
             <ArgonBox sx={style}>
               <ArgonTypography id="modal-modal-title" variant="h6" component="h2">
-                Text in a modal
+                choose an image to upload
               </ArgonTypography>
               <ArgonTypography id="modal-modal-description" sx={{ mt: 2 }}>
                 Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
