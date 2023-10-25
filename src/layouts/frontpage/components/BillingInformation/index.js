@@ -28,7 +28,7 @@ import ArgonButton from "components/ArgonButton";
 import Slide from "layouts/frontpage/components/Slide";
 
 // context
-import { useArgonController } from "context";
+import { useArgonController, getSlides } from "context";
 
 // modal styles
 const style = {
@@ -57,8 +57,14 @@ function BillingInformation() {
 
   // updating slides via context
   useEffect(() => {
-    setSlides(controller.data);
-  }, []);
+    // use axios or fetch to get the data
+    fetch("https://jsonplaceholder.typicode.com/albums/2/photos")
+      .then((response) => response.json())
+      .then((data) => getSlides(dispatch, data))
+      .catch((error) => console.log(error.message));
+
+    setSlides(controller.slides);
+  }, [controller.slides]);
 
   return (
     <Card id="delete-account">

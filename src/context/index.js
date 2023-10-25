@@ -74,13 +74,13 @@ function reducer(state, action) {
       return {
         ...state,
         loading: false,
-        data: action.payload,
+        slides: action.value,
       };
     case FETCH_ERROR:
       return {
         ...state,
         loading: false,
-        error: action.payload,
+        error: action.value,
       };
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
@@ -102,28 +102,12 @@ function ArgonControllerProvider({ children }) {
     darkMode: false,
     loading: false,
     error: null,
-    data: [],
+    slides: [],
   };
 
   const [controller, dispatch] = useReducer(reducer, initialState);
 
   const value = useMemo(() => [controller, dispatch], [controller, dispatch]);
-
-  useEffect(() => {
-    // dispatch an action before fetching
-    dispatch({ type: FETCH_DATA });
-    // use axios or fetch to get the data
-    fetch("https://jsonplaceholder.typicode.com/albums/2/photos")
-      .then((response) => response.json())
-      .then((data) => {
-        // dispatch an action after fetching successfully
-        dispatch({ type: FETCH_SUCCESS, payload: data });
-      })
-      .catch((error) => {
-        // dispatch an action in case of an error
-        dispatch({ type: FETCH_ERROR, payload: error.message });
-      });
-  }, []);
 
   return <Argon.Provider value={value}>{children}</Argon.Provider>;
 }
@@ -154,6 +138,7 @@ const setOpenConfigurator = (dispatch, value) => dispatch({ type: "OPEN_CONFIGUR
 const setDirection = (dispatch, value) => dispatch({ type: "DIRECTION", value });
 const setLayout = (dispatch, value) => dispatch({ type: "LAYOUT", value });
 const setDarkMode = (dispatch, value) => dispatch({ type: "DARK_MODE", value });
+const getSlides = (dispatch, value) => dispatch({ type: FETCH_SUCCESS, value });
 
 // create and export a getter function that returns the name of the character
 
@@ -169,4 +154,5 @@ export {
   setDirection,
   setLayout,
   setDarkMode,
+  getSlides,
 };
