@@ -24,11 +24,19 @@ import ArgonBox from "components/ArgonBox";
 import ArgonTypography from "components/ArgonTypography";
 import ArgonButton from "components/ArgonButton";
 
-// Slideing page components
+// Sliding page components
 import Slide from "layouts/frontpage/components/Slide";
+import { UploadDropzone } from "@bytescale/upload-widget-react";
 
 // context
 import { useArgonController, getSlides } from "context";
+
+// Full Configuration:
+// https://www.bytescale.com/docs/upload-widget#configuration
+const options = {
+  apiKey: "free", // Get API keys from: www.bytescale.com
+  maxFileCount: 10,
+};
 
 // modal styles
 const style = {
@@ -55,11 +63,34 @@ function BillingInformation() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const postData = async function (url = "", data = {}) {
+    // Default options are marked with *
+    const response = await fetch(url, {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      // mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify(data), // body data type must match "Content-Type" header
+    });
+    return response.json(); // parses JSON response into native JavaScript objects
+  };
   // updating slides via context
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/albums/2/photos")
       .then((response) => response.json())
-      .then((data) => getSlides(dispatch, data))
+      .then((data) => {
+        getSlides(
+          dispatch,
+          data.filter((dataItem) => dataItem.id > 95)
+        );
+        // console.log(data);
+      })
       .catch((error) => console.log(error.message));
   }, [controller.slides]);
 
@@ -89,12 +120,36 @@ function BillingInformation() {
             aria-describedby="modal-modal-description"
           >
             <ArgonBox sx={style}>
-              <ArgonTypography id="modal-modal-title" variant="h6" component="h2">
+              <UploadDropzone
+                options={options}
+                onUpdate={({ uploadedFiles }) => {
+                  console.log(
+                    uploadedFiles.map((x) => `${x.fileUrl} and ${x.filePath}`).join("\n")
+                  );
+                  uploadedFiles.map((file) => {
+                    postData("https://jsonplaceholder.typicode.com/photos", {
+                      albumId: 2,
+                      title: "test upload",
+                      url: file.fileUrl,
+                      thumbnailUrl: file.fileUrl,
+                    }).then((data) => {
+                      console.log(data); // JSON data parsed by `data.json()` call
+
+                      getSlides(dispatch, [...slides, data]);
+                      setSlides([...slides, data]);
+                    });
+                  });
+                  // setOpen(false);
+                }}
+                width="600px"
+                height="375px"
+              />
+              {/* <ArgonTypography id="modal-modal-title" variant="h6" component="h2">
                 choose an image to upload
               </ArgonTypography>
               <ArgonTypography id="modal-modal-description" sx={{ mt: 2 }}>
                 Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-              </ArgonTypography>
+              </ArgonTypography> */}
             </ArgonBox>
           </Modal>
         </ArgonBox>
@@ -104,7 +159,7 @@ function BillingInformation() {
           {slides
             ? slides.map((slide, i) => {
                 const { id, title, url, thumbnailUrl } = slide;
-                if (i < 4) {
+                if (i > 0) {
                   return (
                     <Slide
                       key={i}
